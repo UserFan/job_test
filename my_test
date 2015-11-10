@@ -1,0 +1,22 @@
+row_count = 0
+while row_count <= 0 do
+  print "Введите количество итераций (значение должно быть больше 0): "
+  row_count = gets.chop.to_i
+end
+value = '1'
+ row_count.times do
+  puts value
+  count = 0
+  result = ''
+  last_value = value[0]
+  value.chars.each do |char|
+   if last_value == char
+    count += 1
+   else
+    result += "#{count}#{last_value}"
+    count = 1
+  end
+  last_value = char
+ end
+  value = (result += "#{count}#{last_value}")
+end
